@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
+
+/*------- Navbar --------*/
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    background: 
+        linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+        -moz-linear-gradient:(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+        -webkit-linear-gradient:(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+
+
+
+
+}
+
+.navbar {
+    background-color: #bbcea8;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    text-shadow: 3px 3px 4px #444;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    text-shadow: 3px 3px 4px #444;
+}
+
+
+
+/*------ Footer ------ */
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+}
+
+.socials {
+    display: flex;
+    align-items: flex-end;
+}
