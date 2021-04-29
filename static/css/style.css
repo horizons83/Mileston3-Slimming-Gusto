@@ -41,6 +41,9 @@ body {
     font-family: 'Pacifico', sans-serif;
 }
 
+.card-panel {
+    border-radius: 50px;
+}
 
 
 
