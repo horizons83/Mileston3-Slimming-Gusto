@@ -17,22 +17,31 @@ body {
 
 }
 
-.navbar {
+
+.nav-wrapper {
     background-color: #bbcea8;
 }
 
-.navbar-brand {
+.brand-logo {
     font-family: 'Pacifico', sans-serif;
-    font-size: 32px;
+    font-size: 22px;
     color: #fff;
     text-shadow: 3px 3px 4px #444;
+    margin-left: 5px;
 }
 
-.nav-link {
+.nav-wrapper li {
     font-family: 'Roboto', sans-serif;
     color: #fff;
     text-shadow: 3px 3px 4px #444;
 }
+
+.caption {
+    text-shadow: 3px 3px 4px #444;
+    font-family: 'Pacifico', sans-serif;
+}
+
+
 
 
 
