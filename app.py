@@ -52,15 +52,15 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/sign_in", methods=["GET", "POST"])
-def sign_in():
+@app.route("/login", methods=["GET", "POST"])
+def login():
     if request.method == "POST":
-        # check if username exists in db
+        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
+            # ensure hashed password matches user
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
@@ -71,14 +71,14 @@ def sign_in():
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
-                return redirect(url_for("sign_in"))
+                return redirect(url_for("login"))
 
         else:
-            # username doesn't exist
+            # If username doesn't exist
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("Sign_in"))
+            return redirect(url_for("login"))
 
-    return render_template("sign_in.html")
+    return render_template("login.html")
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -90,11 +90,11 @@ def profile(username):
     if session["user"]:
         return render_template("profile.html", username=username)
 
-    return redirect(url_for("sign_in"))
+    return redirect(url_for("login"))
 
 
-@app.route("/sign_out")
-def sign_out():
+@app.route("/logout")
+def logout():
     # remove user session cookies
     flash("You have been logged out")
     session.pop("user")
