@@ -41,10 +41,12 @@ body {
     font-family: 'Pacifico', sans-serif;
 }
 
+/*---- Search Bar -----*/
 .card-panel {
     border-radius: 50px;
 }
 
+/*---- Category Cards ----*/
 .welcome-text p {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -56,5 +58,8 @@ body {
     font-family: 'Roboto', sans-serif;
     color: #000;
 }
+
+/*---- Footer ----*/
+
 
 

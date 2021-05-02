@@ -2,59 +2,89 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" type="text/css" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    
-    <!-- Materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <title>Slimming Gusto</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" type="text/css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+  <!-- Materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    type="text/css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <title>Slimming Gusto</title>
 </head>
 
 <body>
-
+  <header>
     <nav class="nav-extended">
-        <div class="nav-wrapper">
-          <a href="#!" class="brand-logo fluid">Slimming Gusto</a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('get_recipes')}}"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="badges.html"><i class="fas fa-clipboard-list"></i> Recipes</a></li>
-            <li><a href="collapsible.html"><i class="fas fa-user-plus"></i> Register</a></li>
-            <li><a href="mobile.html"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
-          </ul>
-        </div>
-      </nav>
-    
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="{{ url_for('get_recipes')}}"></i>Home</a></li>
-        <li><a href="badges.html">Recipes</a></li>
-        <li><a href="collapsible.html">Register</a></li>
-        <li><a href="mobile.html">Login</a></li>
-      </ul>
-    
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo fluid">Slimming Gusto</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url_for('index')}}"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="badges.html"><i class="fas fa-clipboard-list"></i> My Recipes</a></li>
+          <li><a href="badges.html"><i class="fas fa-plus"></i> Add Recipe</a></li>
+          <li><a href="badges.html"><i class="fas fa-tasks"></i> Manage Categories</a></li>
+          <li><a href="badges.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+          <li><a href="{{ url_for('register') }}"><i class="fas fa-user-plus"></i> Register</a></li>
+          <li><a href="mobile.html"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <!-- Content for each page -->
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{{ url_for('index')}}"></i>Home</a></li>
+      <li><a href="badges.html">My Recipes</a></li>
+      <li><a href="badges.html">Add Recipe</a></li>
+      <li><a href="badges.html">Manage Categories</a></li>
+      <li><a href="badges.html">Sign Out</a></li>
+      <li><a href="{{ url_for('register') }}">Register</a></li>
+      <li><a href="mobile.html">Sign In</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages()  %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+      <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </section>
+
+  <!-- Content for each page -->
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  
+
+  <div class="footer">
+    <div class="divider"></div>
+    <div class="col s12 center-align">
+      <p>&copy; Euan Fennell<br> Milestone 3 Project 2021</p>
+    </div>
+
+  </div>
 
 
 
 
-    <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Javascript -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Javascript -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
