@@ -27,7 +27,7 @@
           <li><a href="{{ url_for('index')}}"><i class="fas fa-home"></i> Home</a></li>
           {% if session.user %}
               <li><a href="{{ url_for('profile', username=session['user']) }}"><i class="fas fa-clipboard-list"></i> My Profile</a></li>
-              <li><a href="badges.html"><i class="fas fa-plus"></i> Add Recipe</a></li>
+              <li><a href="{{ url_for('add_recipe')}}"><i class="fas fa-plus"></i> Add Recipe</a></li>
               {% if session.user|lower == "admin"|lower %}
                   <li><a href="badges.html"><i class="fas fa-tasks"></i> Manage Categories</a></li>
               {% endif %}
@@ -44,7 +44,7 @@
       <li><a href="{{ url_for('index')}}"></i>Home</a></li>
       {% if session.user %}
           <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
-          <li><a href="badges.html">Add Recipe</a></li>
+          <li><a href="{{ url_for('add_recipe')}}">Add Recipe</a></li>
           {% if session.user|lower == "admin"|lower %}
               <li><a href="badges.html">Manage Categories</a></li>
           {% endif %}
