@@ -65,6 +65,10 @@ body {
     color: #000;
 }
 
+.collapsible li {
+    font-family: 'Roboto', sans-serif;
+}
+
 /*---- Footer ----*/
 
 
