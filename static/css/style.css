@@ -36,6 +36,12 @@ body {
     text-shadow: 3px 3px 4px #444;
 }
 
+/*--- Flash Messages ----*/
+.flashes {
+    line-height: 2;
+}
+
+/*---- Hero image captions ----*/
 .caption {
     text-shadow: 3px 3px 4px #444;
     font-family: 'Pacifico', sans-serif;
