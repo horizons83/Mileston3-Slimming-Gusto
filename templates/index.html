@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<!-- Image Slider -->
 <div class="slider">
     <ul class="slides">
       <li>
@@ -34,6 +34,7 @@
       </li>
     </ul>
   </div>
+  <!-- Search Bar -->
   <div class="container">
       <div class="row card-panel transparent">
           <form action="#" method="post" class="col s12">
@@ -52,5 +53,32 @@
               </div>
           </form>
       </div>
+  </div>
+  
+  <div class="container">
+    <div class="welcome-text">
+      <p class="col s12 m4 l8 center-align">
+        If you want to eat great great food that won't pile on the pounds then why not try out our search bar.
+        You can even sign up and share your slimming recipes.
+        or why not click the pictures below for a list of recipes.
+      </p>
+    </div>
+  </div>
+  <!-- Category Card Panels -->
+  <div class="container">
+    <div class="row">
+      {% for category in categories %}
+      <div class="col s12 m6 l3">
+        <div class="card">
+          <a href="#">
+            <div class="card-image">
+              <img src="{{ category.image }}">
+              <span class="card-title">{{ category.category_name|capitalize }}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %} 

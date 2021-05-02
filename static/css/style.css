@@ -45,19 +45,16 @@ body {
     border-radius: 50px;
 }
 
-
-
-
-/*------ Footer ------ */
-
-.footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: 2.5rem;
+.welcome-text p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
 
-.socials {
-    display: flex;
-    align-items: flex-end;
+.card-title {
+    text-shadow: 3px 3px 4px #444;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
 }
+
+
