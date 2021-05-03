@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>This is a Recipe</h2>
-    {% for recipe in recipes %}
-        {{ recipe.recipe_title }}<br>
-        {{ recipe.category_name }}<br>
-        {{ recipe.recipe_description }}<br>
-        {{ recipe.serves }}<br>
-        {{ recipe.prep_time }}<br>
-        {{ recipe.cook_time }}<br>
-        {{ recipe.kcal }}<br>
-        {{ recipe.ingredients }}<br>
-        {{ recipe.method }}<br>
-    {% endfor %}
+<section>
+    <div class="container">
+        <div class="row justify-content-center my-4">
+            <div class="col s12 col-md-6 text-center mt-4 recipe-heading z-depth-3">
+                <h2><strong>{{ recipe.recipe_title|title }}</strong></h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

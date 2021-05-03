@@ -132,6 +132,10 @@ body {
     display: none;
 }
 
+.collapsible-header {
+    border: 2px solid rgb(190, 166, 241)
+}
+
 /*---- Footer ----*/
 
 
