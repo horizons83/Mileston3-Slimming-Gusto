@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Your Recipe</h3>
+<div class="col s12">
+    <div class="row">
+        <h3 class="center-align recipe-heading">Add Your Recipe</h3>
+    </div>
+</div>
 <div class="container">
-    <div class="row card-panel transparent">
+    <div class="row card-panel">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('add_recipe') }}">
             <!-- category selection -->
             <div class="row">
@@ -71,18 +75,44 @@
                     </select>
                 </div>                
             </div>
+            <!-- Calories Input -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <i class="fas fa-fire-alt prefix light-blue-text text-darken-4"></i>
                     <input id="kcal" name="kcal" type="text" required>                        
                     <label for="kcal">Calories Per Serving</label>
                 </div>
             </div>
-            
+            <!-- Ingredients -->
+            <h6 class="ingredient">Ingredients</h6>
+            <div class="row ing-list">
+                <div class="input-field col s12 ingre-input">
+                    <i class="far fa-list-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="ingredients" name="ingredients" type="text" placeholder="ingredient" aria-label="ingredient input" required>                        
+                </div>
+            </div>
+            <div class="col s12">
+                <a class="btn-floating btn waves-effect waves-light blue add-ingred"><i class="fas fa-plus"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-ing"><i class="fas fa-minus remove-ingred"></i></a>
+            </div>
+
+            <!-- Method List-->
+            <h6 class="m-list">Method</h6>
+            <div class="row method-list">
+                <div class="input-field col s12 method-input">
+                    <i class="far fa-list-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="method" name="method" type="text" placeholder="Add Method Steps" aria-label="method input" required>                        
+                </div>
+            </div>
+            <div class="col s12">
+                <a class="btn-floating btn waves-effect waves-light blue"><i class="fas fa-plus add-method"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-met"><i class="fas fa-minus remove-method"></i></a>
+            </div>
+
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
+                    <button type="submit" class="btn waves-effect light-blue darken-1 text-shadow">
                         Add Recipe <i class="fas fa-plus-square right"></i>
                     </button>
                 </div>

@@ -17,7 +17,6 @@ body {
 
 }
 
-
 .nav-wrapper {
     background-color: #bbcea8;
 }
@@ -47,9 +46,11 @@ body {
     font-family: 'Pacifico', sans-serif;
 }
 
+
 /*---- Search Bar -----*/
 .card-panel {
     border-radius: 50px;
+    border: 2px solid rgb(190, 166, 241)
 }
 
 /*---- Category Cards ----*/
@@ -67,6 +68,68 @@ body {
 
 .collapsible li {
     font-family: 'Roboto', sans-serif;
+}
+
+/*--- Add Recipe ---*/
+
+.recipe-heading {
+    text-transform: uppercase;
+}
+
+.ing-list {
+    margin-bottom: 0;
+}
+
+.method-list {
+    margin-bottom: 0;
+}
+
+.ingre-input {
+    margin-bottom: 0;
+}
+
+.method-input {
+    margin-bottom: 0;
+}
+
+.ingredient {
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.m-list {
+    text-align: center;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.add-ingred {
+    font-size: 15px;
+    color: #0070F9;
+}
+
+.add-method {
+    font-size: 15px;
+    color: #0070F9;
+}
+
+.remove-ing  {
+    color: #FC2216;
+}
+
+.remove-ing {
+    display: none;
+}
+
+.remove-met {
+    display: none;
+}
+
+.remove-method {
+    font-size: 15px;
+    color: #FC2216;
+    display: none;
 }
 
 /*---- Footer ----*/
