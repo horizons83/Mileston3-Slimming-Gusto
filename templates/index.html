@@ -36,7 +36,7 @@
   </div>
   <!-- Search Bar -->
   <div class="container">
-      <div class="row card-panel transparent">
+      <div class="row card-panel z-depth-5">
           <form action="{{ url_for('search') }}" method="post" class="col s12">
               <div class="row valign-wrapper center-align">
                   <div class="input-field col s12 m8">
@@ -70,10 +70,10 @@
       {% for category in categories %}
       <div class="col s12 m6 l3">
         <div class="card">
-          <a href="{{ url_for('search_page') }}">
-            <div class="card-image">
+          <a href="/categories/{{ category.category_name }}">
+            <div class="card-image z-depth-5">
               <img src="{{ category.image }}">
-              <span class="card-title">{{ category.category_name|capitalize }}</span>
+              <span class="card-title text-shadow">{{ category.category_name|capitalize }}</span>
             </div>
           </a>
         </div>

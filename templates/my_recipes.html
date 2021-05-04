@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
-            <div class="card-panel transparent">
+            <div class="card-panel z-depth-5">
                 <h3 class="center-align light-blue-text text-darken-4">
                     {{ username }}'s Recipes 
                 </h3>
@@ -14,14 +14,14 @@
     <!-- accordion to show recipes added by current user -->
     <div class="row">
       <div class="col s12 m8 offset-m2">
-        <ul class="collapsible popout transparent">
+        <ul class="collapsible popout">
           {% for recipe in recipes %}
           <li>
-            <div class="collapsible-header transparent">
+            <div class="collapsible-header z-depth-5">
               <i class="fas fa-caret-down"></i>
               <strong>{{ recipe.recipe_title }}</strong>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body z-depth-5">
               <strong>{{ recipe.recipe_description }}</strong>
                 <div class="row">
                   <!-- See recipe button -->
