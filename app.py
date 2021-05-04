@@ -81,6 +81,18 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/search_page")
+def search_page():
+    return render_template("search_page.html")
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("search_page.html", recipes=recipes, query=query)
+
+
 @app.route("/my_recipes/<username>")
 def my_recipes(username):
     # grab the session user's username from db
@@ -127,15 +139,6 @@ def add_recipe():
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
-
-
-@app.route("/recipe/<recipe_id>")
-def recipe(recipe_id):
-    """
-    Displays the full recipe
-    """
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipes.html", recipe=recipe, title="Recipe_title")
 
 
 if __name__ == "__main__":
