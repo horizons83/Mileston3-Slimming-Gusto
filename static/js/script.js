@@ -26,4 +26,14 @@ $(document).ready(function(){
  // Remove last step input on added add/edit recipe form:
  $(".remove-method").click(function () {
    $("#method").last().remove();
+
+   // Show confirm (yes/no) delete buttons when delete recipe button is pressed:
+   $(".delete-btn").click(function () {
+     $(".del-confirm").show();
+   });
+
+   // Hide confirm (yes/no) delete buttons when "No" button is pressed:
+   $(".cancel-delete-btn").click(function () {
+     $(this).parent().hide();
+   });
 });

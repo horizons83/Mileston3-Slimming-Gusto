@@ -136,6 +136,10 @@ body {
     border: 2px solid rgb(190, 166, 241)
 }
 
+.del-confirm {
+    display: none;
+}
+
 /*---- Footer ----*/
 
 

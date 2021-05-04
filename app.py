@@ -129,6 +129,15 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    """
+    Displays the full recipe
+    """
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipes.html", recipe=recipe, title="Recipe_title")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
