@@ -50,7 +50,7 @@ body {
 }
 
 
-/*---- Search Bar -----*/
+/*---- card panel -----*/
 .card-panel {
     border-radius: 50px;
     border: 2px solid rgb(190, 166, 241)
@@ -141,6 +141,18 @@ body {
 
 .del-confirm {
     display: none;
+}
+
+/*---- recipe cards ----*/
+.info-card i {
+    line-height: 2px;
+    font-size: 20px;
+}
+
+.recipe-desc {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 /*---- Footer ----*/

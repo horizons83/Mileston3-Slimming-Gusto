@@ -110,6 +110,17 @@ def my_recipes(username):
     return redirect(url_for("login"))
 
 
+@app.route("/categories/<category>/<recipe_url>/<recipe_id>")
+def recipe(category, recipe_url, recipe_id):
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
+    method = recipe["method"]
+    ingredients = recipe["ingredients"]
+    return render_template(
+        "recipes.html", recipe=recipe, method=method,
+        ingredients=ingredients)
+
+
 @app.route("/logout")
 def logout():
     # remove user session cookies
