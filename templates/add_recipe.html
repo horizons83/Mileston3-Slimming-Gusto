@@ -69,7 +69,7 @@
                 <div class="col s12 m4">
                     <select class="transparent" aria-label="cook time" name="cook_time" required>
                         <option value="" disabled selected>Cook Time</option>
-                            {% for n in range(5,185,5) %}
+                            {% for n in range(0,185,5) %}
                             <option value="{{ n }}">{{ n }} mins</option>
                             {% endfor %} 
                     </select>

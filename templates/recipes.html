@@ -21,21 +21,21 @@
                     <i class="far fa-folder-open"></i><span class="sr-only">Category</span>
                     {{ recipe.category_name|capitalize }}<br>
                     <br>
-                    <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep {{ recipe.prep_time }}
+                    <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep  {{ recipe.prep_time }}
                     mins<br>
                     <br>
-                    <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook {{ recipe.cook_time }}
+                    <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook  {{ recipe.cook_time }}
                     mins<br>
                     <br>
-                    <i class="fas fa-users"></i> {{ recipe.serves }} servings<br>
+                    <i class="fas fa-users"></i>  serves {{ recipe.serves }}<br>
                     <br>
-                    <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span> {{ recipe.kcal }} kcal
+                    <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span>  {{ recipe.kcal }} kcal per serving
                 </div>
             </div>
             <div class="col s12 m9">
                 <div class="card-panel z-depth-5 recipe-desc">
                     <h4 class="center-align">Description</h4>
-                    <p class="">{{ recipe.recipe_description }}</p>
+                    <p class="center-align">{{ recipe.recipe_description }}</p>
                 </div>
             </div>
         </div>
