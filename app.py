@@ -160,8 +160,8 @@ def edit_recipe(recipe_id):
             "recipe_title": request.form.get("recipe_title"),
             "recipe_description": request.form.get("recipe_description"),
             "serves": int(request.form.get("serves")),
-            "prep_time": int(request.form.get("prep_time")),
-            "cook_time": int(request.form.get("cook_time")),
+            "prep_time": (request.form.get("prep_time")),
+            "cook_time": (request.form.get("cook_time")),
             "kcal": (request.form.get("kcal")),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
@@ -173,8 +173,7 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_recipe.html", categories=categories,
-                            recipe=recipe,)
-
+                           recipe=recipe)
 
 
 @app.route("/categories/<category_name>")
