@@ -50,7 +50,8 @@ main {
 /*---- card panel -----*/
 .card-panel {
     border-radius: 50px;
-    border: 2px solid rgb(190, 166, 241)
+    border: 2px solid rgb(190, 166, 241);
+    background-color: #fcfcfc;
 }
 
 /*---- Category Cards ----*/
