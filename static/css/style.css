@@ -2,22 +2,19 @@
 
 /*------- Navbar --------*/
 
-html {
-    min-height: 100vh;
-}
-
 body {
-    /*background:
-        linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
-        -moz-linear-gradient:(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
-        -webkit-linear-gradient:(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);*/
    background-image: url("../images/background.jpg");
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+   overflow-x: hidden;
+}
 
-
-
+main {
+    flex: 1 0 auto
 }
 
 .nav-wrapper {
@@ -158,5 +155,22 @@ body {
 
 /*---- Footer ----*/
 
+.footer {
+    background-color: #bbcea8;
+}
 
+.socials {
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+/*.copy {
+    margin-top: 0px
+}*/
+
+.social-link {
+    margin: 0px 5px;
+    color: #000;
+}
 
