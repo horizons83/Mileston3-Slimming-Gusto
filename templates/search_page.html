@@ -56,13 +56,13 @@
               <strong>{{ recipe.recipe_description }}</strong>
                 <div class="row">
                   <!-- See recipe button -->
-                  <a href="#" class="btn waves-effect waves-light blue darken-4 text-shadow">See Recipe
+                  <a href="/categories/{{ recipe.category_name }}/{{ recipe.recipe_title }}/{{ recipe._id }}" class="btn waves-effect waves-light blue darken-4 text-shadow">See Recipe
                     <i class="fas fa-arrow-right"></i>
                   </a>
                   {% if session.user %}
                   {% if session.user|lower == recipe.added_by|lower %}
                     <!-- edit recipe button -->
-                    <a href="#" class="btn waves-effect waves-light green text-darken-4">
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-light green text-darken-4">
                       <i class="fas fa-edit left"></i>EDIT
                     </a>
                     <!-- delete recipe button -->

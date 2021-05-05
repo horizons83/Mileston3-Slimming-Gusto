@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="col s12">
+    <div class="row">
+        <h3 class="center-align recipe-heading">Edit Your Recipe</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row card-panel z-depth-5">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <!-- category selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <select id="category_name" name="category_name" required>
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for category in categories %}
+                            {% if category.category_name == recipe.category_name %}
+                                <option value="{{ category.category_name }}" selected>{{ category.category_name|capitalize }}</option>
+                            {% else %}
+                                <option value="{{ category.category_name }}">{{ category.category_name|capitalize }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                    <label for="category_name">Recipe Category</label>
+                </div>
+            </div>
+            <!-- recipe name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="recipe_title" name="recipe_title" minlength="5" maxlength="50"
+                        type="text" value="{{ recipe.recipe_title|title }}" class="validate" required>
+                    <label for="recipe_title">Recipe Title</label>
+                </div>
+            </div>
+            <!-- recipe description -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="recipe_description" name="recipe_description" minlength="10" 
+                        class="materialize-textarea validate" required>{{ recipe.recipe_description|capitalize }}</textarea>
+                    <label for="recipe_description">Recipe Description</label>
+                </div>
+            </div>
+            <!-- servings options -->
+            <div class="row">
+                <div class="col s12 m4">
+                    <select class="transparent" name="serves" 
+                        aria-label="select servings" required>
+                        <option value="" disabled selected>Serves</option>
+                        {% for n in range(1,9) %}
+                        {% if recipe.serves == n %}
+                        <option value="{{ recipe.serves }}" selected> {{ recipe.serves }}</option>
+                        {% else %}
+                        <option value="{{ n }}">{{ n }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <!-- Prep Time -->
+                <div class="col s12 m4">
+                    <select class="transparent" aria-label="prep time" name="prep_time" required>
+                        <option value="" disabled selected>Prep Time</option>
+                            {% for n in range(5,185,5) %}
+                            <option value="{{ n }}">{{ n }} mins</option>
+                            {% endfor %} 
+                    </select>
+                </div>
+                <!-- Cooking Time -->
+                <div class="col s12 m4">
+                    <select class="transparent" aria-label="cook time" name="cook_time" required>
+                        <option value="" disabled selected>Cook Time</option>
+                            {% for n in range(0,185,5) %}
+                            <option value="{{ n }}">{{ n }} mins</option>
+                            {% endfor %} 
+                    </select>
+                </div>                
+            </div>
+            <!-- Calories Input -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-fire-alt prefix light-blue-text text-darken-4"></i>
+                    {% for kcal in kcal %}
+                    <input id="kcal" name="kcal" type="text" value="{{ recipe.kcal }}" required>
+                    {% endfor %}
+                    <label for="kcal">Calories Per Serving</label>
+                </div>
+            </div>
+            <!-- Ingredients -->
+            <h6 class="ingredient">Ingredients</h6>
+            <div class="row ing-list">
+                <div class="input-field col s12 ingre-input">
+                    <i class="far fa-list-alt prefix light-blue-text text-darken-4"></i>
+                    <input id="ingredients" name="ingredients" type="text" placeholder="ingredient" value="{{ ingredient }}" aria-label="ingredient input" required>                   
+                </div>
+            </div>
+            <div class="col s12">
+                <a class="btn-floating btn waves-effect waves-light blue add-ingred"><i class="fas fa-plus"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-ing"><i class="fas fa-minus remove-ingred"></i></a>
+            </div>
+
+            <!-- Method List-->
+            <h6 class="m-list">Method</h6>
+            <div class="row method-list">
+                <div class="input-field col s12 method-input">
+                    <i class="far fa-list-alt prefix light-blue-text text-darken-4"></i>
+
+                    <input id="method" name="method" type="text" placeholder="Add Method Steps" value="{{ method }}" aria-label="method input" required>
+                   
+                </div>
+            </div>
+            <div class="col s12">
+                <a class="btn-floating btn waves-effect waves-light blue"><i class="fas fa-plus add-method"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-met"><i class="fas fa-minus remove-method"></i></a>
+            </div>
+
+            <!-- submit button -->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn waves-effect light-blue darken-1 text-shadow">
+                        Add Recipe <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}  

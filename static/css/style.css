@@ -59,7 +59,8 @@ body {
 /*---- Category Cards ----*/
 .welcome-text p {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 400;
 }
 
 .card-title {
