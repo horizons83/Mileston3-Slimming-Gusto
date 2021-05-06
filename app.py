@@ -185,6 +185,13 @@ def category(category_name):
         "categories.html", recipes=recipes, name=name, category=category)
 
 
+@app.route("/manage")
+def manage():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template(
+        "manage.html", categories=categories)
+
+
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})

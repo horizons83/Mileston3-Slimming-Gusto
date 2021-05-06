@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col s12">
+  <div class="row">
+      <h3 class="center-align recipe-heading">Admin Management Panel</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m8 offset-m2">
+    <ul class="collapsible popout">
+      {% for category in categories %}
+      <li>
+        <div class="collapsible-header z-depth-5">
+          <i class="fas fa-caret-down"></i>
+          <strong>{{ category.category_name }}</strong>
+        </div>
+        <div class="collapsible-body z-depth-5">
+          <strong>testing</strong>
+          <div class="row">
+            <!-- edit category button -->
+            <a href="#" class="btn waves-effect waves-light green text-darken-4">
+              <i class="fas fa-edit left"></i>EDIT
+            </a>
+            <!-- delete category button -->
+            <button type="button" class="delete-btn btn waves-effect waves-light red darken-2"><i
+                class="fas fa-trash-alt left"></i>DELETE</button>
+
+            <!-- Confirm Delete Yes / No Buttons -->
+            <div id="del-confirm">
+              Are you sure you want to delete this category? <br>
+              <a href="#" class="btn btn waves-effect waves-light red lighten-1">Yes</a>
+              <button type="button" class="cancel-delete-btn btn waves-effect waves-light">No</button>
+            </div>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="divider"></div>
+
+{% endblock %}
