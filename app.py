@@ -145,7 +145,7 @@ def add_recipe():
             "added_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Successfully Added")
+        flash("Recipe Added Successfully")
         return redirect(url_for("add_recipe"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)

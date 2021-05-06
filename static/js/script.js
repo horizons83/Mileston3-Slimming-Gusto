@@ -23,7 +23,7 @@ $(document).ready(function(){
    $("#ingredients").last().remove();
  });
 
- // Remove last step input on added add/edit recipe form:
+ // Remove last method input on added add/edit recipe form:
  $(".remove-method").click(function () {
    $("#method").last().remove();
 

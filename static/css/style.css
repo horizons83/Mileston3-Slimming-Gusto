@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
 
-/*------- Navbar --------*/
-
 body {
    background-image: url("../images/background.jpg");
    background-position: center;
@@ -16,6 +14,8 @@ body {
 main {
     flex: 1 0 auto
 }
+
+/*------- Navbar --------*/
 
 .nav-wrapper {
     background-color: #bbcea8;
@@ -72,7 +72,7 @@ main {
     font-family: 'Roboto', sans-serif;
 }
 
-/*--- Add Recipe ---*/
+/*--- Add/edit Recipe ---*/
 
 .recipe-heading {
     text-transform: uppercase;
@@ -138,11 +138,13 @@ main {
     border: 2px solid rgb(190, 166, 241)
 }
 
+/*--- delete recipe button ----*/
 .del-confirm {
     display: none;
 }
 
 /*---- recipe cards ----*/
+
 .info-card i {
     line-height: 2px;
     font-size: 20px;
@@ -165,10 +167,6 @@ main {
     margin-bottom: 0px;
     margin-top: 5px;
 }
-
-/*.copy {
-    margin-top: 0px
-}*/
 
 .social-link {
     margin: 0px 5px;
