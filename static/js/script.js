@@ -20,7 +20,7 @@ $(document).ready(function(){
 
  // Remove last ingredient  added on edit/add recipe form:
  $(".remove-ingred").click(function () {
-   $("#ingredients").last().remove();
+   $(".ingredients").last().remove();
  });
 
  // Remove last method input on added add/edit recipe form:
