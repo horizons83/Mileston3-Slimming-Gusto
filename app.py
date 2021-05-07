@@ -142,6 +142,7 @@ def add_recipe():
             "kcal": request.form.get("kcal"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
+            "image_url": request.form.get("image_url"),
             "added_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -165,6 +166,7 @@ def edit_recipe(recipe_id):
             "kcal": request.form.get("kcal"),
             "ingredients": request.form.getlist("ingredients"),
             "method": request.form.getlist("method"),
+            "image_url": request.form.get("image_url"),
             "added_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)

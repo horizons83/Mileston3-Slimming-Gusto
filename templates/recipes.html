@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col s12 s6 center-align">
-                <h2><strong>{{ recipe.recipe_title|title }}</strong></h2>
+                <h2 class="text-shadow recipe-title"><strong>{{ recipe.recipe_title|title }}</strong></h2>
             </div>
         </div>
     </div>
@@ -15,27 +15,33 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col s12 m3">
+            <div class="col s12 m7 center-align">
+                <div class="">
+                    <img src="{{recipe.image_url}}" alt="" class="responsive-img recipe-image z-depth-5">
+                </div>
+            </div>
+            <div class="col s12 m5">
+                <div class="card-panel z-depth-5 recipe-desc">
+                    <h4 class="center-align">Description</h4>
+                    <p class="center-align">{{ recipe.recipe_description }}</p>
+               </div>
+            </div>
+            <div class="col s12 m5">
                 <div class="card-panel z-depth-5 info-card">
                     <h4 class="center-align">Info <i class="fas fa-info-circle"></i></h4>
                     <i class="far fa-folder-open"></i><span class="sr-only">Category</span>
                     {{ recipe.category_name|capitalize }}<br>
                     <br>
-                    <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep  {{ recipe.prep_time }}
+                    <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep {{ recipe.prep_time }}
                     mins<br>
                     <br>
-                    <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook  {{ recipe.cook_time }}
+                    <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook {{ recipe.cook_time }}
                     mins<br>
                     <br>
-                    <i class="fas fa-users"></i>  serves {{ recipe.serves }}<br>
+                    <i class="fas fa-users"></i> serves {{ recipe.serves }}<br>
                     <br>
-                    <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span>  {{ recipe.kcal }} kcal per serving
-                </div>
-            </div>
-            <div class="col s12 m9">
-                <div class="card-panel z-depth-5 recipe-desc">
-                    <h4 class="center-align">Description</h4>
-                    <p class="center-align">{{ recipe.recipe_description }}</p>
+                    <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span> {{ recipe.kcal }} kcal
+                    per serving
                 </div>
             </div>
         </div>
@@ -63,5 +69,5 @@
             </div>
         </div>
     </div>
-
+</div>
 {% endblock %}

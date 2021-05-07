@@ -51,7 +51,7 @@ main {
 .card-panel {
     border-radius: 50px;
     border: 2px solid rgb(190, 166, 241);
-    background-color: #fcfcfc;
+    background-color: #e0f2f1;
 }
 
 /*---- Category Cards ----*/
@@ -135,7 +135,8 @@ main {
 }
 
 .collapsible-header {
-    border: 2px solid rgb(190, 166, 241)
+    border: 2px solid rgb(190, 166, 241);
+    background-color: #e0f2f1;
 }
 
 /*--- delete recipe button ----*/
@@ -145,9 +146,20 @@ main {
 
 /*---- recipe cards ----*/
 
+.recipe-title {
+   font-family: 'Pacifico', sans-serif;
+   color: #fff;
+   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
+}
+
+.recipe-image {
+    border-radius: 50px;
+    max-height: 650px;
+}
+
 .info-card i {
     line-height: 2px;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 .recipe-desc {
