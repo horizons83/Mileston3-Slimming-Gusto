@@ -24,7 +24,7 @@
           <strong>testing</strong>
           <div class="row">
             <!-- edit category button -->
-            <a href="#" class="btn waves-effect waves-light green text-darken-4">
+            <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn waves-effect waves-light green text-darken-4">
               <i class="fas fa-edit left"></i>EDIT
             </a>
             <!-- delete category button -->

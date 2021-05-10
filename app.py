@@ -229,7 +229,7 @@ def edit_category(category_id):
         return redirect(url_for("manage"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("manage.html", category=category)
+    return render_template("edit_category.html", category=category)
 
 
 @app.route('/delete_recipe/<recipe_id>')
