@@ -112,6 +112,7 @@ def my_recipes(username):
 
 @app.route("/categories/<category>/<recipe_url>/<recipe_id>")
 def recipe(category, recipe_url, recipe_id):
+    # Display recipe information
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
     method = recipe["method"]
@@ -209,6 +210,7 @@ def manage():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    # Allow admin to add categories
     if request.method == "POST":
         category = {
             "category_name": request.form.get("category_name"),
@@ -223,6 +225,7 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    # Allow admin to edit categories
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -254,6 +257,12 @@ def delete_category(category_id):
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category successfully deleted")
     return redirect(url_for("manage"))
+
+
+@app.errorhandler(404)
+def not_found_error(error):
+    # 404 error page to handle any errors
+    return render_template('404.html', error=error, title="404 Error"), 404
 
 
 if __name__ == "__main__":

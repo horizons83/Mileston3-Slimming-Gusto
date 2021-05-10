@@ -172,6 +172,19 @@ main {
     font-size: 18px;
 }
 
+/*----- 404 Error -------*/
+
+.error-text {
+    font-size: 3rem;
+    color: #305D64;
+}
+
+.error-message {
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
 /*---- Footer ----*/
 
 .footer {
