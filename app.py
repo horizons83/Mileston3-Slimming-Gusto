@@ -205,6 +205,19 @@ def manage():
         "manage.html", categories=categories, recipes=recipes)
 
 
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("manage"))
+
+    return render_template("add_category.html")
+
+
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -216,7 +229,7 @@ def edit_category(category_id):
         return redirect(url_for("manage"))
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-    return render_template("manage.html", category=category) 
+    return render_template("manage.html", category=category)
 
 
 @app.route('/delete_recipe/<recipe_id>')
