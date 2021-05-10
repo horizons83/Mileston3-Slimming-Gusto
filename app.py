@@ -131,6 +131,7 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    # Enable user to add recipe to database
     if request.method == "POST":
         recipe = {
             "category_name": request.form.get("category_name").lower(),
@@ -155,6 +156,7 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    # Enable user to edit recipe they have added to database.
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -180,6 +182,7 @@ def edit_recipe(recipe_id):
 
 @app.route("/categories/<category_name>")
 def category(category_name):
+    # List categories on index.html
     name = category_name
     category = mongo.db.categories.find_one({"category_name": category_name})
     recipes = list(mongo.db.recipes.find({"category_name": category_name}))
@@ -189,16 +192,51 @@ def category(category_name):
 
 @app.route("/manage")
 def manage():
-    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    # Allow admin user to manage categories and recipes
+    # Direct user to login if not in session
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+    # If user in session is Admin then show category list and recipe list
+    if session["user"] == "admin":
+        categories = list(mongo.db.categories.find().sort("category_name", 1))
+        recipes = list(mongo.db.recipes.find().sort("recipe_title", 1))
     return render_template(
-        "manage.html", categories=categories)
+        "manage.html", categories=categories, recipes=recipes)
+
+
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+        flash("Category Successfully Updated")
+        return redirect(url_for("manage"))
+
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    return render_template("manage.html", category=category) 
 
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    # Allow user to delete recipe
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe successfully deleted")
     return redirect(url_for("index"))
+
+
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    # Allow Admin user to delete category
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+    if session["user"] == "admin":
+        mongo.db.categories.remove({"_id": ObjectId(category_id)})
+        flash("Category successfully deleted")
+    return redirect(url_for("manage"))
 
 
 if __name__ == "__main__":
