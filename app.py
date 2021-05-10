@@ -194,6 +194,8 @@ def category(category_name):
 def manage():
     # Allow admin user to manage categories and recipes
     # Direct user to login if not in session
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    recipes = list(mongo.db.recipes.find().sort("recipe_title", 1))
     if "user" not in session:
         flash("Please Log In")
         return redirect(url_for("login"))

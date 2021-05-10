@@ -2,6 +2,7 @@
 {% block content %}
 <div class="col s12">
   <div class="row">
+{% if session.user|lower == "admin"|lower %}
       <h3 class="center-align page-title">Admin Management Panel</h3>
   </div>
 </div>
@@ -40,6 +41,7 @@
           </div>
         </div>
       </li>
+
       {% endfor %}
     </ul>
   </div>
@@ -79,5 +81,16 @@
     </ul>
   </div>
 </div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col s12 center-align">
+      <h3 class="center-align"> Whoop's I dont think you belong here..</h3>
+      <p class="center-align"> Click button to go back to home page</p>
+      <a href="{{ url_for('index') }}" class="btn btn waves-effect waves-light lighten-1">Home</a>
+    </div>
+  </div>
+</div>
+{% endif %}
 
 {% endblock %}
