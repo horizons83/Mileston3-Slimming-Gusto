@@ -164,7 +164,7 @@ main {
 
 
 .info-card i {
-    line-height: 2;
+    line-height: 1.8;
     font-size: 22px;
 }
 
@@ -174,9 +174,12 @@ main {
     font-size: 18px;
 }
 
+.method-list li:not(:last-child) {
+    margin-bottom: 18px;
+}
 
-.ingredient-list {
-    line-height: 3;
+.ingredient-list li:not(:last-child) {
+    margin-bottom: 18px;
 }
 
 /*----- 404 Error -------*/
