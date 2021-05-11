@@ -18,30 +18,41 @@
             <div class="col s12 m7">
                 <div class="center-align">
                     <img src="{{ recipe.image_url }}" alt="recipe image" class="responsive-img recipe-image z-depth-5">
-               </div>
+                </div>
             </div>
             <div class="col s12 m5">
                 <div class="card-panel z-depth-5 recipe-desc">
                     <h4 class="center-align">Description <i class="fas fa-pencil-alt"></i></h4>
                     <p class="center-align">{{ recipe.recipe_description }}</p>
-               </div>
+                </div>
             </div>
             <div class="col s12 m5">
                 <div class="card-panel z-depth-5 info-card">
                     <h4 class="center-align">Info <i class="fas fa-info-circle"></i></h4>
-                    <i class="far fa-folder-open"></i><span class="sr-only">Category</span>
-                    {{ recipe.category_name|capitalize }}<br>
-                    <br>
-                    <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep {{ recipe.prep_time }}
-                    mins<br>
-                    <br>
-                    <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook {{ recipe.cook_time }}
-                    mins<br>
-                    <br>
-                    <i class="fas fa-users"></i> serves {{ recipe.serves }}<br>
-                    <br>
-                    <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span> {{ recipe.kcal }} kcal
-                    per serving
+                    <ul>
+                        <li>
+                            <i class="far fa-folder-open"></i><span class="sr-only"> Category</span>
+                            {{ recipe.category_name|capitalize }}
+                        </li>
+                        <li>
+                            <i class="fas fa-blender"></i><span class="sr-only">Prep Time</span> Prep Time
+                            {{ recipe.prep_time }}
+                            mins
+                        </li>
+                        <li>
+                            <i class="fas fa-burn"></i><span class="sr-only">Cook Time</span> Cook Time
+                            {{ recipe.cook_time }}
+                            mins
+                        </li>
+                        <li>
+                            <i class="fas fa-users"></i> serves {{ recipe.serves }}
+                        </li>
+                        <li>
+                            <i class="fas fa-balance-scale-left"></i><span class="sr-only">Kcal</span> {{ recipe.kcal }}
+                            kcal
+                            per serving
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -53,7 +64,7 @@
                     <h4 class="center-align">Ingredients <i class="fas fa-shopping-basket"></i></h4>
                     <ul class="text-shadow">
                         {% for ingredient in ingredients %}
-                        <li>{{ ingredient|capitalize }}</li><br>
+                        <li class="ingredient-list">{{ ingredient|capitalize }}</li>
                         {% endfor %}
                     </ul>
                 </div>

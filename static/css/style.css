@@ -161,8 +161,10 @@ main {
     max-height: 650px;
 }
 
+
+
 .info-card i {
-    line-height: 2px;
+    line-height: 1.5;
     font-size: 22px;
 }
 
@@ -170,6 +172,11 @@ main {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 18px;
+}
+
+
+.ingredient-list {
+    line-height: 3;
 }
 
 /*----- 404 Error -------*/
