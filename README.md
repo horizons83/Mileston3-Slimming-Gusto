@@ -1,45 +1,70 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![responsive image](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/am-i-responsive.png)
+This is a screenshot from [Am I Responsive](http://ami.responsivedesign.is/)
 
-Welcome horizons83,
+### Slimming Gusto, Tasty Guilt Free Recipies.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Slimming Gusto is a recipe app that provides a place for people to share healthy delicious food recipes for people to follow and create.
 
-## Gitpod Reminders
+The website is aimed at people who maybe trying to loose weight following diet plans from weight loss companies or users who just want 
+good healty meals.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This site was conceived from my own personal journey with loosing weight and to show that you can still have great tasting meals even when
+following a strict diet plan. There are many misconceptions about diet plans from tiny portions to horrible cardboard food. This is 
+totally not the case and this app is here to prove that you can still eat good sized meals with zero guilt or regret!
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+ 
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience UX
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User Requirements
 
-A blue button should appear to click: _Make Public_,
+- As a **User** I want to be able to easily understand the main purpose of the website.
+- As a **User** I want to be able to easily navigate the website.
+- As a **User** I want to easily search and find recipies to follow.
+- As a **User** I want to be able to register to the site to gain access to the full features of the website.
+- As a **User** I want to see to be able to add my slimming recipes to the site to share with others.
+- As a **User** I want to be able to access, edit and update all recipes I have added to the site.
+- As a **User** I want to be able to delete a recipe I have added to the site.
+- As a **User** I want to be able to contact site admin to report a bug or submit a query.
 
-Another blue button should appear to click: _Open Browser_.
+### Owners Requirements
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- As an **Owner** I want the home page to immediately tell the User what the site is for.
+- As an **Owner** I want the User to be able to easily navigate the site via navigation links.
+- As an **Owner** I want users to be able to register to the site to access all features.
+- As an **Owner** I want users to be able to add recipes to the site to build database and share with others.
+- As an **Owner** I want users to be able to be able to see,edit and delete any recipes they have added.
 
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+[Contents](#Table-of-Contents)
 
 ---
 
-Happy coding!
+## Design
+
+I did the design for this website using Balsamiq to create the wireframes. I have created wireframes for all pages on desktop, tablet and mobile.
+
+### Wireframes
+
+|                                                      Slimming Gusto                                            	|
+|:--------------------------------------------------------------------------------------------------------------:
+| [Home Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-index.pdf) 	|  
+|  [Register Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-register.pdf)  	|  
+|  [Log In Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-login.pdf)  	|
+|  [Profile Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-profile.pdf)  	|
+|  [Recipe Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-recipe.pdf)  	|
+|  [Add Recipe Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-add-recipe.pdf)  	| 
+|  [Admin Management Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-admin.pdf)  	|
+|  [Edit Category Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-edit-category.pdf)  	|
+|  [Edit Recipe Page](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/wireframes/wireframe-edit-recipe.pdf)  	|
+
+### Fonts
+
+For typograph I have used Pacifico for the main app title and also some page headings. I then used Roboto for main text sections some
+the main text bodies are clear for the user to read.
+
+### Colour Scheme
+
+I wanted to keep the colour scheme soft so used a mixture of soft greens and off whites.
+I have created a palette using [Coolors](https://coolors.co/) and it is displayed below.
+![colour palette](Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
