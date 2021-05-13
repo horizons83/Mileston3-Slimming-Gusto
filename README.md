@@ -1,7 +1,7 @@
 ![responsive image](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/am-i-responsive.png)
 This is a screenshot from [Am I Responsive](http://ami.responsivedesign.is/)
 
-### Slimming Gusto, Tasty Guilt Free Recipies.
+## Slimming Gusto, Tasty Guilt Free Recipies.
 
 Slimming Gusto is a recipe app that provides a place for people to share healthy delicious food recipes for people to follow and create.
 
@@ -67,4 +67,4 @@ the main text bodies are clear for the user to read.
 
 I wanted to keep the colour scheme soft so used a mixture of soft greens and off whites.
 I have created a palette using [Coolors](https://coolors.co/) and it is displayed below.
-![colour palette](Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
+![colour palette](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
