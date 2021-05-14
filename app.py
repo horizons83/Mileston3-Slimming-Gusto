@@ -136,21 +136,20 @@ def add_recipe():
     if "user" not in session:
         flash("Please Log In")
         return redirect(url_for("login"))
-    if session["user"] == "user":
-        if request.method == "POST":
-            recipe = {
-                "category_name": request.form.get("category_name").lower(),
-                "recipe_title": request.form.get("recipe_title"),
-                "recipe_description": request.form.get("recipe_description"),
-                "serves": int(request.form.get("serves")),
-                "prep_time": int(request.form.get("prep_time")),
-                "cook_time": int(request.form.get("cook_time")),
-                "kcal": request.form.get("kcal"),
-                "ingredients": request.form.getlist("ingredients"),
-                "method": request.form.getlist("method"),
-                "image_url": request.form.get("image_url"),
-                "added_by": session["user"]
-            }
+    if request.method == "POST":
+        recipe = {
+            "category_name": request.form.get("category_name").lower(),
+            "recipe_title": request.form.get("recipe_title"),
+            "recipe_description": request.form.get("recipe_description"),
+            "serves": int(request.form.get("serves")),
+            "prep_time": int(request.form.get("prep_time")),
+            "cook_time": int(request.form.get("cook_time")),
+            "kcal": request.form.get("kcal"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "image_url": request.form.get("image_url"),
+            "added_by": session["user"]
+        }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Added Successfully")
         return redirect(url_for("add_recipe"))
