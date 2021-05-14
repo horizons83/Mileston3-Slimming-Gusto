@@ -224,9 +224,9 @@ def add_category():
              "category_name": request.form.get("category_name"),
              "image": request.form.get("image")
             }
-        mongo.db.categories.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for("manage"))
+            mongo.db.categories.insert_one(category)
+            flash("New Category Added")
+            return redirect(url_for("manage"))
 
     return render_template("add_category.html")
 
@@ -234,15 +234,11 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     # Allow admin to edit categories
-    if "user" not in session:
-        flash("Please Log In")
-        return redirect(url_for("login"))
-    if session["user"] == "admin":
-        if request.method == "POST":
-            submit = {
-              "category_name": request.form.get("category_name"),
-              "image": request.form.get("image")
-            }
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "image": request.form.get("image")
+        }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("manage"))
