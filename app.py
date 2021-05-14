@@ -133,20 +133,24 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     # Enable user to add recipe to database
-    if request.method == "POST":
-        recipe = {
-            "category_name": request.form.get("category_name").lower(),
-            "recipe_title": request.form.get("recipe_title"),
-            "recipe_description": request.form.get("recipe_description"),
-            "serves": int(request.form.get("serves")),
-            "prep_time": int(request.form.get("prep_time")),
-            "cook_time": int(request.form.get("cook_time")),
-            "kcal": request.form.get("kcal"),
-            "ingredients": request.form.getlist("ingredients"),
-            "method": request.form.getlist("method"),
-            "image_url": request.form.get("image_url"),
-            "added_by": session["user"]
-        }
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+    if session["user"] == "user":
+        if request.method == "POST":
+            recipe = {
+                "category_name": request.form.get("category_name").lower(),
+                "recipe_title": request.form.get("recipe_title"),
+                "recipe_description": request.form.get("recipe_description"),
+                "serves": int(request.form.get("serves")),
+                "prep_time": int(request.form.get("prep_time")),
+                "cook_time": int(request.form.get("cook_time")),
+                "kcal": request.form.get("kcal"),
+                "ingredients": request.form.getlist("ingredients"),
+                "method": request.form.getlist("method"),
+                "image_url": request.form.get("image_url"),
+                "added_by": session["user"]
+            }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Added Successfully")
         return redirect(url_for("add_recipe"))
@@ -211,11 +215,15 @@ def manage():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     # Allow admin to add categories
-    if request.method == "POST":
-        category = {
-            "category_name": request.form.get("category_name"),
-            "image": request.form.get("image")
-        }
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+    if session["user"] == "admin":
+        if request.method == "POST":
+            category = {
+             "category_name": request.form.get("category_name"),
+             "image": request.form.get("image")
+            }
         mongo.db.categories.insert_one(category)
         flash("New Category Added")
         return redirect(url_for("manage"))
@@ -226,11 +234,15 @@ def add_category():
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     # Allow admin to edit categories
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name"),
-            "image": request.form.get("image")
-        }
+    if "user" not in session:
+        flash("Please Log In")
+        return redirect(url_for("login"))
+    if session["user"] == "admin":
+        if request.method == "POST":
+            submit = {
+              "category_name": request.form.get("category_name"),
+              "image": request.form.get("image")
+            }
         mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
         flash("Category Successfully Updated")
         return redirect(url_for("manage"))
