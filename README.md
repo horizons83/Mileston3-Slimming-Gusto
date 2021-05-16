@@ -26,7 +26,6 @@ totally not the case and this app is here to prove that you can still eat good s
 - As a **User** I want to see to be able to add my slimming recipes to the site to share with others.
 - As a **User** I want to be able to access, edit and update all recipes I have added to the site.
 - As a **User** I want to be able to delete a recipe I have added to the site.
-- As a **User** I want to be able to contact site admin to report a bug or submit a query.
 
 ### Owners Requirements
 
