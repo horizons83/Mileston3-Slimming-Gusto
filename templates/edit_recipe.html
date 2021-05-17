@@ -16,7 +16,8 @@
                     <select id="category_name" name="category_name" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
-                            <option value="{{ category.category_name }}" selected>{{ category.category_name|capitalize }}</option>
+                        <option value="{{ category.category_name }}" selected>{{ category.category_name|capitalize }}
+                        </option>
                         {% endfor %}
                     </select>
                     <label for="category_name">Recipe Category</label>
@@ -26,8 +27,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="recipe_title" name="recipe_title" minlength="5" maxlength="50"
-                        type="text" value="{{ recipe.recipe_title|title }}" class="validate" required>
+                    <input id="recipe_title" name="recipe_title" minlength="5" maxlength="50" type="text"
+                        value="{{ recipe.recipe_title|title }}" class="validate" required>
                     <label for="recipe_title">Recipe Title</label>
                 </div>
             </div>
@@ -35,8 +36,9 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="recipe_description" name="recipe_description" minlength="10" 
-                        class="materialize-textarea validate" required>{{ recipe.recipe_description|capitalize }}</textarea>
+                    <textarea id="recipe_description" name="recipe_description" minlength="10"
+                        class="materialize-textarea validate"
+                        required>{{ recipe.recipe_description|capitalize }}</textarea>
                     <label for="recipe_description">Recipe Description</label>
                 </div>
             </div>
@@ -44,24 +46,24 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-link prefix light-blue-text text-darken-4"></i>
-                    <textarea id="image_url" name="image_url" minlength="10" 
-                        class="materialize-textarea validate" required>{{ recipe.image_url }}</textarea>
-                    <label for="image_url">Recipe Image link ( example: https://images.unsplash.com/photo-1476718406336 ) </label>
+                    <textarea id="image_url" name="image_url" minlength="10" class="materialize-textarea validate"
+                        required>{{ recipe.image_url }}</textarea>
+                    <label for="image_url">Recipe Image link ( example: https://images.unsplash.com/photo-1476718406336
+                        ) </label>
                 </div>
             </div>
             <!-- servings options -->
             <div class="row">
                 <div class="col s12 m4">
                     <h6 class="center-align">Servings</h6>
-                    <select class="transparent" name="serves" 
-                        aria-label="select servings" required>
+                    <select class="transparent" name="serves" aria-label="select servings" required>
                         <option value="" disabled>Serves</option>
                         {% for n in range(1,9) %}
-                           {% if recipe.serves == n %}
-                                 <option value="{{ recipe.serves }}" selected>{{ recipe.serves }}</option>
-                           {% else %}
-                                 <option value="{{ n }}">{{ n }}</option>
-                           {% endif %}
+                        {% if recipe.serves == n %}
+                        <option value="{{ recipe.serves }}" selected>{{ recipe.serves }}</option>
+                        {% else %}
+                        <option value="{{ n }}">{{ n }}</option>
+                        {% endif %}
                         {% endfor %}
                     </select>
                 </div>
@@ -70,13 +72,13 @@
                     <h6 class="center-align">Prep Time</h6>
                     <select class="transparent" aria-label="prep time" name="prep_time" required>
                         <option value="" disabled>Prep Time</option>
-                            {% for n in range(5,185,5) %}
-                               {% if recipe.prep_time == n %}
-                                  <option value="{{ recipe.prep_time }}" selected>{{ recipe.prep_time }} mins</option>
-                               {% else %}
-                                  <option value="{{ n }}">{{ n }} mins</option>
-                               {% endif %}
-                            {% endfor %} 
+                        {% for n in range(5,185,5) %}
+                        {% if recipe.prep_time == n %}
+                        <option value="{{ recipe.prep_time }}" selected>{{ recipe.prep_time }} mins</option>
+                        {% else %}
+                        <option value="{{ n }}">{{ n }} mins</option>
+                        {% endif %}
+                        {% endfor %}
                     </select>
                 </div>
                 <!-- Cooking Time -->
@@ -84,15 +86,15 @@
                     <h6 class="center-align">Cook Time</h6>
                     <select class="transparent" aria-label="cook time" name="cook_time" required>
                         <option value="" disabled>Cook Time</option>
-                            {% for n in range(0,185,5) %}
-                               {% if recipe.cook_time == n %}
-                                  <option value="{{ recipe.cook_time }}" selected>{{ recipe.cook_time }} mins</option>
-                               {% else %}
-                                  <option value="{{ n }}">{{ n }} mins</option>
-                               {% endif %}
-                            {% endfor %} 
+                        {% for n in range(0,185,5) %}
+                        {% if recipe.cook_time == n %}
+                        <option value="{{ recipe.cook_time }}" selected>{{ recipe.cook_time }} mins</option>
+                        {% else %}
+                        <option value="{{ n }}">{{ n }} mins</option>
+                        {% endif %}
+                        {% endfor %}
                     </select>
-                </div>                
+                </div>
             </div>
             <br>
             <!-- Calories Input -->
@@ -108,13 +110,15 @@
             <div class="row ing-list">
                 <div class="input-field col s12 ingre-input">
                     {% for ingredient in recipe.ingredients %}
-                    <input id="ingredients" name="ingredients" type="text" placeholder="ingredient" value="{{ ingredient }}" aria-label="ingredient input" required>
-                    {% endfor %}                   
+                    <input id="ingredients" name="ingredients" type="text" placeholder="ingredient"
+                        value="{{ ingredient }}" aria-label="ingredient input" required>
+                    {% endfor %}
                 </div>
             </div>
             <div class="col s12">
                 <a class="btn-floating btn waves-effect waves-light blue add-ingred"><i class="fas fa-plus"></i></a>
-                <a class="btn-floating btn waves-effect waves-light red remove-ing"><i class="fas fa-minus remove-ingred"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-ing"><i
+                        class="fas fa-minus remove-ingred"></i></a>
             </div>
 
             <!-- Method List-->
@@ -122,13 +126,15 @@
             <div class="row method-list">
                 <div class="input-field col s12 method-input">
                     {% for method in recipe.method %}
-                    <input id="method" name="method" type="text" placeholder="Add Method Steps" value="{{ method }}" aria-label="method input" required>
+                    <input id="method" name="method" type="text" placeholder="Add Method Steps" value="{{ method }}"
+                        aria-label="method input" required>
                     {% endfor %}
                 </div>
             </div>
             <div class="col s12">
                 <a class="btn-floating btn waves-effect waves-light blue"><i class="fas fa-plus add-method"></i></a>
-                <a class="btn-floating btn waves-effect waves-light red remove-meth"><i class="fas fa-minus remove-method"></i></a>
+                <a class="btn-floating btn waves-effect waves-light red remove-meth"><i
+                        class="fas fa-minus remove-method"></i></a>
             </div>
 
             <!-- submit button -->
@@ -143,4 +149,4 @@
     </div>
 </div>
 
-{% endblock %}  
+{% endblock %}

@@ -3,82 +3,83 @@
 {% block content %}
 <!-- Image Slider -->
 <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="./static/images/vegetables.jpg" alt="Vegetables arranged in circle pattern"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>Eat Well, Eat Healthy</h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="./static/images/salad-bowl.jpg" alt="Avacado salad displayed in blue bowl on wooden table"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Beautiful Food</h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="./static/images/cooking.jpg" alt="Person mixing ingredients in a bowl"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>Gorgeous Recipes</h3>
-          
-        </div>
-      </li>
-      <li>
-        <img src="./static/images/welcome.jpg" alt="Fresh salad in a bowl"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>Welcome To Slimming Gusto!</h3>
-          
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- Search Bar -->
-  <div class="container">
-      <div class="row card-panel z-depth-5">
-          <form action="{{ url_for('search') }}" method="post" class="col s12">
-              <div class="row valign-wrapper center-align">
-                  <div class="input-field col s12 m8">
-                      <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                      <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                      <label for="query">Search Recipes</label>
-                  </div>
-                  <div class="col s12 m4">
-                      <a href="{{ url_for('index') }}" class="red btn text-shadow"><i class="fas fa-redo"></i>   Reset</a>
-                      <button type="submit" class="light-blue darken-1 btn text-shadow">
-                          <i class="fas fa-search left"></i> Search
-                      </button>
-                  </div>
-              </div>
-          </form>
+  <ul class="slides">
+    <li>
+      <img src="./static/images/vegetables.jpg" alt="Vegetables arranged in circle pattern"> <!-- random image -->
+      <div class="caption center-align">
+        <h3>Eat Well, Eat Healthy</h3>
+
       </div>
-  </div>
-  
-  <div class="container">
-    <div class="welcome-text">
-      <p class="col s12 m4 l8 center-align text-shadow">
-        If you want to eat great tasting food that won't pile on the pounds then why not try out our search bar.
-        You can even sign up and share your slimming recipes.
-        or why not click the pictures below for a list of recipes.
-      </p>
-    </div>
-  </div>
-  <!-- Category Card Panels -->
-  <div class="container">
-    <div class="row  center-align">
-      {% for category in categories %}
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <a href="/categories/{{ category.category_name }}">
-            <div class="card-image z-depth-5">
-              <img src="{{ category.image }}" alt="category image" class="responsive-img">
-              <span class="card-title text-shadow">{{ category.category_name|capitalize }}</span>
-            </div>
-          </a>
+    </li>
+    <li>
+      <img src="./static/images/salad-bowl.jpg" alt="Avacado salad displayed in blue bowl on wooden table">
+      <!-- random image -->
+      <div class="caption left-align">
+        <h3>Beautiful Food</h3>
+
+      </div>
+    </li>
+    <li>
+      <img src="./static/images/cooking.jpg" alt="Person mixing ingredients in a bowl"> <!-- random image -->
+      <div class="caption right-align">
+        <h3>Gorgeous Recipes</h3>
+
+      </div>
+    </li>
+    <li>
+      <img src="./static/images/welcome.jpg" alt="Fresh salad in a bowl"> <!-- random image -->
+      <div class="caption center-align">
+        <h3>Welcome To Slimming Gusto!</h3>
+
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- Search Bar -->
+<div class="container">
+  <div class="row card-panel z-depth-5">
+    <form action="{{ url_for('search') }}" method="post" class="col s12">
+      <div class="row valign-wrapper center-align">
+        <div class="input-field col s12 m8">
+          <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+          <input type="text" name="query" id="query" minlength="3" class="validate" required>
+          <label for="query">Search Recipes</label>
+        </div>
+        <div class="col s12 m4">
+          <a href="{{ url_for('index') }}" class="red btn text-shadow"><i class="fas fa-redo"></i> Reset</a>
+          <button type="submit" class="light-blue darken-1 btn text-shadow">
+            <i class="fas fa-search left"></i> Search
+          </button>
         </div>
       </div>
-      {% endfor %}
-    </div>
+    </form>
   </div>
-{% endblock %} 
+</div>
+
+<div class="container">
+  <div class="welcome-text">
+    <p class="col s12 m4 l8 center-align text-shadow">
+      If you want to eat great tasting food that won't pile on the pounds then why not try out our search bar.
+      You can even sign up and share your slimming recipes.
+      or why not click the pictures below for a list of recipes.
+    </p>
+  </div>
+</div>
+<!-- Category Card Panels -->
+<div class="container">
+  <div class="row  center-align">
+    {% for category in categories %}
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <a href="/categories/{{ category.category_name }}">
+          <div class="card-image z-depth-5">
+            <img src="{{ category.image }}" alt="category image" class="responsive-img">
+            <span class="card-title text-shadow">{{ category.category_name|capitalize }}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
