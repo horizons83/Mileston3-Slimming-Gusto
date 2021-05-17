@@ -12,7 +12,41 @@ This site was conceived from my own personal journey with loosing weight and to 
 following a strict diet plan. There are many misconceptions about diet plans from tiny portions to horrible cardboard food. This is 
 totally not the case and this app is here to prove that you can still eat good sized meals with zero guilt or regret!
 
+## Table of Contents
+1. [User Experience](#User-Experience-UX)
+2. [Scope](#Scope)
+    - [Functional Specifications](#Functional-Specifications)
+	- [Content Requirements](#Content-Requirements)
+	
+3. [Design](#Design)
+    - [Wireframes](#Wireframes)
+	- [Fonts](#Fonts)
+	- [Colour Scheme](#Colour-Scheme)
+	
+4. [Features](#Features)
+    - [Features Currently Implemented](#Features-Currently-Implemented)
+	- [Future Features](#Future-Features)
+	
+5. [Technologies Used](#Technologies-Used)
+    - [Languages](#Languages)
+	- [Frameworks Libraries and Programs](#Frameworks-Libraries-and-Programs)
+	
+6. [Defensive Design](#Defensive-Design)
+   
+7. [Testing](#Testing)
 
+8. [Database](#Database)
+    - [Database Collections](#Database-Collections)
+
+9. [Deployment](#Deployment)
+    - [Heroku Deployment](#Heroku-Deployment)
+	- [Creating A Local Clone](#Creating-A-Local-Clone)
+	
+10. [Site Content](#Content)
+
+11. [Acknowledgements](#Acknowledgements)
+
+12. [Disclaimer](#Disclaimer)
  
 
 ## User Experience UX
@@ -26,6 +60,7 @@ totally not the case and this app is here to prove that you can still eat good s
 - As a **User** I want to see to be able to add my slimming recipes to the site to share with others.
 - As a **User** I want to be able to access, edit and update all recipes I have added to the site.
 - As a **User** I want to be able to delete a recipe I have added to the site.
+- As a **User** I want to be able to contact site admin to report a bug or submit a query.
 
 ### Owners Requirements
 
@@ -77,6 +112,9 @@ This will be a Minimal Viable Product containing the most essential core content
 * Admin manage categories page - add/edit/delete categories
 * Footer with Social media links
 
+[Contents](#Table-of-Contents)
+
+---
 ## Design
 
 I did the design for this website using Balsamiq to create the wireframes. I have created wireframes for all pages on desktop, tablet and mobile.
@@ -104,7 +142,7 @@ the main text bodies are clear for the user to read.
 
 I wanted to keep the colour scheme soft so used a mixture of soft greens and off whites.
 I have created a palette using [Coolors](https://coolors.co/) and it is displayed below.
-![colour palette](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
+![colour palette](Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
 
 [Contents](#Table-of-Contents)
 
@@ -132,6 +170,8 @@ I have created a palette using [Coolors](https://coolors.co/) and it is displaye
 - Add comment/ratings to recipes so other registered users can rate/comment on other recipes they may try.
 - Currently recipe images are stored in a Google Cloud bucket with image url stored in database, I would like to connect
 app to image service so users can upload their own recipe image and this can be stored and link passed to database.
+
+[Contents](#Table-of-Contents)
 
 ---
 
@@ -183,6 +223,8 @@ app to image service so users can upload their own recipe image and this can be 
 * [Lighthouse](https://developers.google.com/web/tools/lighthouse)
    * Used to test website performance.
 
+[Contents](#Table-of-Contents)
+
 ---
 
 ## Defensive Design
@@ -231,7 +273,9 @@ Testing documentation can be found [here]()
  - method: array
  - image_url: string
  - added_by: string
- 
+
+[Contents](#Table-of-Contents)
+
 ---
 
 # Deployment
@@ -287,6 +331,8 @@ Open terminal:
 - Type `git clone` and paste the copied url after it
 - Press enter and the clone will be created
 
+[Contents](#Table-of-Contents)
+
 ---
 
 ## Content
@@ -317,3 +363,5 @@ The Slack Community for their knowledge.
 ##  Disclaimer
 
 This project is for educational purposes only.
+
+[Contents](#Table-of-Contents)
