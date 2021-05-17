@@ -104,7 +104,7 @@ the main text bodies are clear for the user to read.
 
 I wanted to keep the colour scheme soft so used a mixture of soft greens and off whites.
 I have created a palette using [Coolors](https://coolors.co/) and it is displayed below.
-![colour palette](Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
+![colour palette](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/ms3-coolors.png)
 
 [Contents](#Table-of-Contents)
 
