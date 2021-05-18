@@ -110,7 +110,7 @@
             <div class="row ing-list">
                 <div class="input-field col s12 ingre-input">
                     {% for ingredient in recipe.ingredients %}
-                    <input id="ingredients" name="ingredients" type="text" placeholder="ingredient"
+                    <input class="ingredients" name="ingredients" type="text" placeholder="ingredient"
                         value="{{ ingredient }}" aria-label="ingredient input" required>
                     {% endfor %}
                 </div>
@@ -126,7 +126,7 @@
             <div class="row method-list">
                 <div class="input-field col s12 method-input">
                     {% for method in recipe.method %}
-                    <input id="method" name="method" type="text" placeholder="Add Method Steps" value="{{ method }}"
+                    <input class="method" name="method" type="text" placeholder="Add Method Steps" value="{{ method }}"
                         aria-label="method input" required>
                     {% endfor %}
                 </div>
