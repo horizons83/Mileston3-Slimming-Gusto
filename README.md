@@ -239,7 +239,7 @@ app to image service so users can upload their own recipe image and this can be 
 
 ## Testing
 
-Testing documentation can be found [here]()
+Testing documentation can be found [here](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/TESTING.md)
 
 ---
    
