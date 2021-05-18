@@ -116,18 +116,18 @@ browsers: Chrome, Safari, Mozilla Firefox.
    * Search bar invites users to search for recipes.
    * category cards provide links to recipes in each category.
 2. **As an Owner I want the User to be able to easily navigate the site via navigation links.**
-   * Nav bar provided for large devices and nav slide menu for devices upto 992px
+   * Nav bar provided for large devices and nav slide menu for devices up to 992px
    * Nav is available on all pages except 404 error page.
    * Font icons on larger devices add extra visual indication.
 3. **As an Owner I want users to be able to register to the site to access all features.**
    * Registration page is provided for users to sign up.
    * Placeholder text is used to instruct user on requirements for username and password.
    * link is provided for users already registered to go to log in page.
-   * Seperate log in page provided for registered users to sign in.
+   * Separate log in page provided for registered users to sign in.
 4. **As an Owner I want users to be able to add recipes to the site to build database and share with others.**
    * My Recipes page has Add Recipe button.
    * Add Recipe link is provided in Nav bar.
-   * Add Recipe form is straight forward and contains all inputs and relevent information needed to add recipe to database.
+   * Add Recipe form is straight forward and contains all inputs and relevant information needed to add recipe to database.
 5. **As an Owner I want users to be able to be able to see,edit and delete any recipes they have added.**
    * My Recipes page lists all recipes added by user by title which when clicked reveal recipe description with buttons to see recipe, edit and delete.
    * Recipe page displays recipe image, info, description, ingredients and method.
@@ -172,7 +172,7 @@ Each page was tested and passed under the criteria set out below.
    * Home
    * Register 
    * Log In 
-* **For users that are logged in the navigation items diplayed are:**
+* **For users that are logged in the navigation items displayed are:**
    * Home
    * My Recipes
    * Add Recipe
@@ -191,7 +191,7 @@ Each page was tested and passed under the criteria set out below.
 
 ## Home Page
 
-* Displays for all users
+* Displays for all users.
 
 ### Image Slider
 
@@ -210,3 +210,184 @@ Each page was tested and passed under the criteria set out below.
 * Contains category name.
 * Clickable to take user to list of all recipes within category.
 
+## Categories Page
+
+
+* displays for all users.
+* lists all recipes in selected category.
+
+### Collapsible Popouts
+
+* provide title of each recipe.
+* When clicked popout expands to show description of recipe.
+* See Recipe button displayed for all users on expanded popout.
+
+### Edit / Delete Buttons
+
+* These will only display if user is logged in and created selected recipe.
+* Edit button redirects user to edit recipe page.
+* Delete button when clicked will ask for confirmation of delete via yes or no buttons.
+* If yes button is clicked recipe is deleted from database, user is redirected to home page and flash message confirms successful deletion.
+
+## Search Page
+
+* Displays for all users.
+* Search bar allows users to query database for recipes.
+* Search bar contains reset and search buttons.
+* Reset button reloads page to clear search bar and any recipes found.
+* Message displays how many results were returned.
+* Returned recipes are displayed in collapsible popouts.
+
+### Collapsible Popouts
+
+* Recipe title is shown.
+* When clicked, popout expands to show recipe description and see recipe button.
+* if user has created recipe the edit and delete buttons are also shown.
+* See recipe button displays full recipe information.
+* Edit recipe button redirects user to edit recipe page.
+* Delete button shows delete confirmation buttons yes/no and deletes recipe.
+
+## Recipe Page
+
+* Displays for all users.
+* Page is responsive across devices.
+* Displays:
+    * Recipe Title.
+	* Recipe Description.
+	* Recipe Image.
+	* Recipe  Category, Prep / Cook Time, Servings and Calories.
+	* Ingredients List.
+	* Method Instructions.
+
+## My Recipes Page
+
+* Available only to users who are logged in.
+* Displays username e.g Euan's recipes.
+* Collapsible popouts list all recipes added by user.
+
+### Collapsible Popouts
+
+* Popouts display recipe title.
+* Each popout when expanded shows recipe description and includes three buttons to See Recipe, Edit, Delete.
+
+### Edit / Delete Buttons
+
+* Edit button redirects user to edit recipe page.
+* Delete button when clicked will ask for confirmation of delete via yes or no buttons.
+* If yes button is clicked recipe is deleted from database, user is redirected to home page and flash message confirms successful deletion.
+
+### Add Recipe Button
+
+* Under the recipe list an Add Recipe button is displayed.
+* When clicked user is redirected to the Add Recipe page.
+
+### Cancel Button
+
+* Cancel button redirects users back to their My Recipes page.
+
+## Add Recipe Page
+
+* Only displays for users that are logged in.
+* Displays a form for users to fill with required recipe details.
+* Form will not submit if any fields left empty.
+* Placeholder text is provided to instruct user on requirements.
+* Ingredients and method lists have buttons to add and remove line.
+   * Add button increases empty line by one  on each click.
+   * Remove button removes last added line on each click but will not remove first line if all others removed.
+
+### Add Button
+
+* When clicked recipe form is refreshed and flash message tells user if the recipe was added successfully.
+* Button will not submit if a field is left blank.
+
+### Cancel Button
+
+* Cancel button redirects user back to their My Recipes page.
+
+## Edit Recipe Page
+
+* Only available if user is both logged in and also created recipe.
+* Displays a form which is populated with current recipe information.
+* Form will not submit if any fields are not populated.
+* Ingredients and method lists have buttons to add and remove line.
+   * Add button increases empty line by one  on each click.
+   * Remove button removes last added line on each click.
+
+### Edit / Cancel Buttons
+
+* Edit button only submits if all fields are populated.
+* When edit button submits the page reloads a flash message confirms the recipe has been updated and fields populated with updated information.
+* Cancel button redirects users back to their My Profile page.
+
+## Log In Page
+
+* Displays for all users.
+* Displays form to input username and password.
+* Placeholder texts tells user which line is for username and password.
+* All fields must be populated.
+* If incorrect details are entered the page is reloaded and flash message appears advising user that incorrect username and/or password was entered.
+
+### Sign In Button
+
+* Button will not submit if input fields not complete or do not match requirements.
+* When button submits user is redirected to their My Recipes page and a flash message is displayed welcoming username.
+
+### Registration Link
+
+* For users not registered the link redirects them to the registration page.
+
+## Register Page
+
+* Displays for all users.
+* Displays registration form.
+* placeholder text informs user that username must be 5-15 characters letters and numbers only.
+* placeholder text informs user that password must be 5-15 characters letters and numbers only.
+
+### Register Button
+
+* Button will not submit if field is empty or does not match requirements.
+* Help text will advise user which field is wrong.
+* If user name already exists then page is reloaded and flash message is shown informing user that name already exists.
+* On submit user is redirected to their My Recipes page and flash message displayed saying registration successful.
+
+### Sign In Link
+
+* Sign in link redirects registered user to the log in page.
+
+## Manage Categories/Recipes ( Admin Panel )
+
+* Menu item and page only display for admin users.
+* Lists all categories and recipes currently in database.
+* Each category / recipe has an Edit and Delete button.
+* In category list an Add Category button is displayed.
+
+### Category Edit / Delete buttons
+
+* Edit button redirects admin user to the edit category page.
+* Delete button removes category from database but first confirms that this action is wanted by displaying yes/no buttons.
+
+### Recipe Edit / Delete Buttons
+
+* Edit button redirects user to edit recipe page.
+* Delete button removes recipe from database but first confirms that this action is wanted by displaying yes/no buttons.
+
+## Edit Category Page
+
+* Displays only for admin user.
+* Displays form populated with current category information, category name and image url.
+* Has Edit Category button and a Cancel button.
+
+### Edit / Cancel Buttons
+
+* Edit button when clicked redirects admin user back to admin management panel and flash message is displayed Category Successfully Updated.
+* Cancel button redirects admin user back to admin management panel.
+
+## 404 Error Page
+
+* Displays when a 404 - page not found error is encountered.
+* Informs user that page could not be found.
+* Has button to return user to home page.
+
+### Home Button
+
+* When clicked redirects user back to home page.
