@@ -27,7 +27,7 @@ No errors found and 8 warnings all relating to vendor prefixes.
 
 * When pages containing recipe lists for example my_recipes.html the W3 validator does return an error for bad value in href attribute
   for see recipe button.
-![Error image](https://github.com/horizons83/Milestone3-Slimming-Gusto/readme-documents/href-error.png)
+![Error image](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/href-error.png)
 
   This error is to be expected because of the recipe titles containing spaces.
 
