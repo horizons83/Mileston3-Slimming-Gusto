@@ -23,12 +23,18 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
+    """
+    This is the index page app route.
+    """
     categories = list(mongo.db.categories.find())
     return render_template("index.html", categories=categories)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    This is the register page app route.
+    """
     if request.method == "POST":
         # Check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -54,6 +60,9 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+    This is the login page app route.
+    """
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -83,11 +92,17 @@ def login():
 
 @app.route("/search_page")
 def search_page():
+    """
+    This is the search page app route.
+    """
     return render_template("search_page.html")
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
+    """
+    This is the search bar app route.
+    """
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("search_page.html", recipes=recipes, query=query)
@@ -95,6 +110,9 @@ def search():
 
 @app.route("/my_recipes/<username>")
 def my_recipes(username):
+    """
+    This is the my recipes app route.
+    """
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -112,6 +130,9 @@ def my_recipes(username):
 
 @app.route("/categories/<category>/<recipe_url>/<recipe_id>")
 def recipe(category, recipe_url, recipe_id):
+    """
+    This is the app route to display recipe information on recipe page.
+    """
     # Display recipe information
     recipe = mongo.db.recipes.find_one(
         {"_id": ObjectId(recipe_id)})
@@ -124,6 +145,9 @@ def recipe(category, recipe_url, recipe_id):
 
 @app.route("/logout")
 def logout():
+    """
+    This is the logout button app route.
+    """
     # remove user session cookies
     flash("You have been logged out")
     session.pop("user")
@@ -132,6 +156,9 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    """
+    This is the add recipe page app route.
+    """
     # Enable user to add recipe to database
     if "user" not in session:
         flash("Please Log In")
@@ -160,6 +187,9 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    """
+    This is the edit recipe page app route.
+    """
     # Enable user to edit recipe they have added to database.
     if request.method == "POST":
         submit = {
@@ -186,6 +216,9 @@ def edit_recipe(recipe_id):
 
 @app.route("/categories/<category_name>")
 def category(category_name):
+    """
+    This is the app route for category cards shown on index page.
+    """
     # List categories on index.html
     name = category_name
     category = mongo.db.categories.find_one({"category_name": category_name})
@@ -196,7 +229,9 @@ def category(category_name):
 
 @app.route("/manage")
 def manage():
-    # Allow admin user to manage categories and recipes
+    """
+    This the manage app route for admin managment panel.
+    """
     # Direct user to login if not in session
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     recipes = list(mongo.db.recipes.find().sort("recipe_title", 1))
@@ -213,7 +248,10 @@ def manage():
 
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
-    # Allow admin to add categories
+    """
+    This is the add category app route.
+    """
+    # Allow  only admin to add categories
     if "user" not in session:
         flash("Please Log In")
         return redirect(url_for("login"))
@@ -232,7 +270,10 @@ def add_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
-    # Allow admin to edit categories
+    """
+    This is the edit category app route.
+    """
+    # Allow  only admin to edit categories
     if request.method == "POST":
         submit = {
             "category_name": request.form.get("category_name"),
@@ -248,6 +289,9 @@ def edit_category(category_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
+    """
+    This is the delete recipe button app route.
+    """
     # Allow user to delete recipe
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe successfully deleted")
@@ -256,7 +300,10 @@ def delete_recipe(recipe_id):
 
 @app.route('/delete_category/<category_id>')
 def delete_category(category_id):
-    # Allow Admin user to delete category
+    """
+    This is the delete category button app route.
+    """
+    # Allow  only Admin user to delete category
     if "user" not in session:
         flash("Please Log In")
         return redirect(url_for("login"))
@@ -268,13 +315,17 @@ def delete_category(category_id):
 
 @app.errorhandler(404)
 def not_found_error(error):
-    # 404 error page to handle any errors
+    """
+    This is the 404 error handler app route.
+    """
     return render_template('404.html', error=error, title="404 Error"), 404
 
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    # 500 error handling page
+    """
+    This is the 500 error handler app route.
+    """
     return render_template('500.html', error=error, title="500 Error"), 500
 
 
