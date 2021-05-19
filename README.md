@@ -229,6 +229,10 @@ app to image service so users can upload their own recipe image and this can be 
 
 ---
 
+## Known Bugs
+
+* 
+
 ## Defensive Design
 
 * Users cannot brute force their way onto pages that they don’t have access to eg a not logged in user cannot access the add_recipe page by adding /add_recipe to the url, a flash message will be displayed asking them to log in.
