@@ -1,6 +1,8 @@
 ![responsive image](https://github.com/horizons83/Milestone3-Slimming-Gusto/blob/master/readme-documents/am-i-responsive.png)
 This is a screenshot from [Am I Responsive](http://ami.responsivedesign.is/)
 
+[Link to Live Project](https://slimming-gusto.herokuapp.com/)
+
 ### Slimming Gusto, Tasty Guilt Free Recipes.
 
 Slimming Gusto is a recipe app that provides a place for people to share healthy delicious food recipes for people to follow and create.
